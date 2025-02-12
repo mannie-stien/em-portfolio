@@ -1,20 +1,83 @@
-.App {
-  text-align: center;
+/* ==================== */
+/* Global Styles */
+/* ==================== */
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  font-size: 16px; /* Base font size */
+  line-height: 1.6; /* Better readability */
+  color: #333;
+  /* background-color: #f8f9fa;  */
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+/* Headings */
+h1, h2, h3, h4, h5, h6 {
+  margin-top: 0;
+  margin-bottom: 1rem; /* Consistent margin for headings */
+  font-weight: 600; /* Bold headings */
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+/* Paragraphs */
+p {
+  margin-top: 0;
+  margin-bottom: 1rem; /* Consistent margin for paragraphs */
+}
+
+/* Links */
+a {
+  color: #61dafb; /* React blue for links */
+  text-decoration: none;
+  transition: color 0.3s ease-in-out;
+}
+
+a:hover {
+  color: #21a1f1; /* Darker blue on hover */
+}
+
+/* ==================== */
+/* Layout and Spacing */
+/* ==================== */
+/* Ensure consistent spacing for all sections */
+/* section {
+  padding: 60px 0; 
+} */
+
+/* Container for floating effect */
+.floating-div {
+  background-color: #ffffff; /* White background for content */
+  color: #333; /* Text color */
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  margin: 40px auto;
+  width: 90%;
+  max-width: 1000px;
+  transition: all 0.3s ease-in-out;
+}
+
+.floating-div:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+}
+
+/* ==================== */
+/* Animations */
+/* ==================== */
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
   }
 }
 
+/* ==================== */
+/* Components */
+/* ==================== */
+/* Header styling */
 .App-header {
-  background-color: #282c34;
+  background-color: #001f3f; /* Matching dark blue background */
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -24,15 +87,87 @@
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+/* Hover effect for project and skill cards */
+.project-card:hover,
+.skill-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+/* ==================== */
+/* Navbar Styling */
+/* ==================== */
+.navbar {
+  background-color: #1e1e2f; /* Dark background for navbar */
+  padding: 10px 0;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+
+.navbar-brand {
+  color: #61dafb !important; /* React blue for brand */
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.nav-link {
+  color: #fff !important; /* White text for links */
+  margin-left: 20px;
+  font-size: 1rem;
+  font-weight: 500;
+  transition: color 0.3s ease-in-out;
+}
+
+.nav-link:hover {
+  color: #61dafb !important; /* React blue on hover */
+}
+
+/* ==================== */
+/* Footer Styling */
+/* ==================== */
+footer {
+  background-color: #1e1e2f; /* Dark background for footer */
+  padding: 20px 0;
+  text-align: center;
+}
+
+footer p {
+  color: #fff;
+  margin: 0;
+  font-size: 0.9rem;
+}
+
+/* ==================== */
+/* Media Queries */
+/* ==================== */
+@media (max-width: 768px) {
+  .floating-div {
+    width: 95%; /* More width on smaller screens */
+    padding: 20px;
   }
-  to {
-    transform: rotate(360deg);
+
+  .navbar-brand {
+    font-size: 1.2rem; /* Smaller font size for mobile */
   }
+
+  .nav-link {
+    margin-left: 10px; /* Less margin for mobile */
+    font-size: 0.9rem; /* Smaller font size for mobile */
+  }
+}
+/* App.css */
+.project-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.hover-scale:hover {
+  transform: scale(1.05);
+}
+/* App.css */
+.category-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
 }
