@@ -8,7 +8,6 @@ const Experience = () => {
   return (
     <section id="experience" style={styles.section}>
       <Container>
-        {/* Section Title */}
         <motion.h2
           initial={{ opacity: 0, y: -20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -59,17 +58,17 @@ const Experience = () => {
 };
 
 const styles = {
- section: {
-    padding: "80px 0 40px 0", // Adjusted padding to account for the navbar
+  section: {
+    padding: "80px 0 40px 0",
     textAlign: "center",
-    scrollMarginTop: "80px", // Ensure the section aligns below the navbar
+    scrollMarginTop: "80px",
   },
   title: {
     textAlign: 'center',
     fontSize: '2.5rem',
     fontWeight: '700',
     marginBottom: '50px',
-    color: '#61dafb', 
+    color: '#61dafb',
   },
   timeline: {
     display: 'flex',
@@ -77,6 +76,7 @@ const styles = {
     alignItems: 'center',
     position: 'relative',
     padding: '20px 0',
+    width: '100%',
   },
   timelineItem: {
     display: 'flex',
@@ -84,6 +84,7 @@ const styles = {
     width: '100%',
     maxWidth: '800px',
     marginBottom: '40px',
+    gap: '20px',
   },
   content: {
     width: '50%',
@@ -142,6 +143,28 @@ const styles = {
     height: '100px',
     background: '#007bff',
     marginTop: '10px',
+  },
+  /* Responsive Styles */
+  '@media (max-width: 768px)': {
+    timelineItem: {
+      flexDirection: 'column !important', // Stack items vertically
+      alignItems: 'center',
+      textAlign: 'center',
+      width: '90%',
+    },
+    content: {
+      width: '100%',
+      padding: '15px',
+    },
+    markerContainer: {
+      width: '100%',
+      display: 'flex',
+      justifyContent: 'center',
+      margin: '10px 0',
+    },
+    line: {
+      display: 'none', // Hide the connecting line for smaller screens
+    },
   },
 };
 

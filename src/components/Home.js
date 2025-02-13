@@ -5,8 +5,17 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons';
 import { faEnvelope } from '@fortawesome/free-solid-svg-icons';
 import IMAGE from '../assets/icons/IMG_9673.jpg';
+import ReactGA from 'react-ga4';
 
 const Home = () => {
+  const handleClick = (label) => {
+    ReactGA.event({
+      category: 'User',
+      action: 'Clicked Link',
+      label: label,
+    });
+  };
+
   return (
     <section id="home" style={styles.container}>
       <Container>
@@ -40,10 +49,27 @@ const Home = () => {
               <strong>React</strong>, <strong>Node.js</strong>, and{' '}
               <strong>Python</strong>. Let’s create something amazing together.
             </motion.p>
+
+            {/* Education Section */}
             <motion.div
               initial={{ opacity: 0, y: -20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.8 }}
+              style={styles.educationSection}
+            >
+              <h3 style={styles.educationTitle}>Education</h3>
+              <p style={styles.educationText}>
+                <strong>Brigham Young University-Idaho</strong>
+                <br />
+                Bachelor of Science in Computer Information Technology.
+              </p>
+            </motion.div>
+
+            {/* Buttons */}
+            <motion.div
+              initial={{ opacity: 0, y: -20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 1 }}
               style={styles.buttonGroup}
             >
               <Button
@@ -57,15 +83,17 @@ const Home = () => {
                 style={styles.outlineButton}
                 href="#projects"
                 className="hover-scale"
+                onClick={() => handleClick('Projects')}
               >
                 View Projects
               </Button>
             </motion.div>
+
             {/* Social Links */}
             <motion.div
               initial={{ opacity: 0, y: -20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 1 }}
+              transition={{ duration: 0.8, delay: 1.2 }}
               style={styles.socialLinks}
             >
               <a
@@ -81,12 +109,10 @@ const Home = () => {
                 target="_blank"
                 rel="noopener noreferrer"
                 style={styles.socialLink}
+                onClick={() => handleClick('LinkedIn')}
               >
                 <FontAwesomeIcon icon={faLinkedin} size="2x" />
               </a>
-              {/* <a href="mailto:manniemstien@gmail.com" style={styles.socialLink}>
-                <FontAwesomeIcon icon={faEnvelope} size="2x" />
-              </a> */}
             </motion.div>
           </Col>
           <Col md={6} style={styles.imageSection}>
@@ -122,43 +148,57 @@ const styles = {
     padding: '20px',
   },
   title: {
-    fontSize: '3.5rem', // Larger font size
+    fontSize: '3.5rem',
     fontWeight: '700',
     marginBottom: '15px',
-    color: '#61dafb', // React blue for branding
+    color: '#61dafb',
     lineHeight: '1.2',
     '@media (max-width: 768px)': {
-      fontSize: '2.5rem', // Smaller font size for mobile
+      fontSize: '2.5rem',
     },
   },
   highlight: {
-    color: '#00d4ff', // Highlight color for name
+    color: '#00d4ff',
   },
   subtitle: {
-    fontSize: '2rem', // Larger font size
+    fontSize: '2rem',
     fontWeight: '500',
     marginBottom: '20px',
-    color: '#d1d1e9', // Softer color for subtitles
+    color: '#d1d1e9',
     '@media (max-width: 768px)': {
-      fontSize: '1.5rem', // Smaller font size for mobile
+      fontSize: '1.5rem',
     },
   },
   description: {
-    fontSize: '1.1rem', // Slightly larger font size
-    lineHeight: '1.8', // Better line height for readability
+    fontSize: '1.1rem',
+    lineHeight: '1.8',
     marginBottom: '30px',
     maxWidth: '500px',
     color: '#c5c5d9',
     '@media (max-width: 768px)': {
-      fontSize: '1rem', // Smaller font size for mobile
+      fontSize: '1rem',
     },
+  },
+  educationSection: {
+    marginBottom: '30px',
+  },
+  educationTitle: {
+    fontSize: '1.5rem',
+    fontWeight: '600',
+    color: '#61dafb',
+    marginBottom: '10px',
+  },
+  educationText: {
+    fontSize: '1rem',
+    color: '#c5c5d9',
+    lineHeight: '1.6',
   },
   buttonGroup: {
     display: 'flex',
-    gap: '15px', // Space between buttons
+    gap: '15px',
     marginBottom: '30px',
     '@media (max-width: 768px)': {
-      flexDirection: 'column', // Stack buttons vertically on mobile
+      flexDirection: 'column',
       gap: '10px',
     },
   },
@@ -167,11 +207,11 @@ const styles = {
     borderColor: '#61dafb',
     fontSize: '1rem',
     fontWeight: '500',
-    padding: '12px 30px', // Slightly larger padding
-    borderRadius: '30px', // Rounded corners
+    padding: '12px 30px',
+    borderRadius: '30px',
     textDecoration: 'none',
     color: '#1e1e2f',
-    transition: 'all 0.3s ease', // Smooth transition for hover effect
+    transition: 'all 0.3s ease',
   },
   outlineButton: {
     backgroundColor: 'transparent',
@@ -192,24 +232,24 @@ const styles = {
     textAlign: 'center',
     padding: '20px',
     '@media (max-width: 768px)': {
-      order: -1, // Move image above text on mobile
+      order: -1,
       marginBottom: '20px',
     },
   },
   image: {
-    width: '100%', // Responsive width
-    maxWidth: '400px', // Maximum size
-    height: 'auto', // Maintain aspect ratio
+    width: '100%',
+    maxWidth: '400px',
+    height: 'auto',
     borderRadius: '50%',
     objectFit: 'cover',
-    imageRendering: 'crisp-edges', // Ensures sharp rendering
+    imageRendering: 'crisp-edges',
     boxShadow: '0px 10px 30px rgba(0, 0, 0, 0.5)',
     border: '5px solid #61dafb',
     transition: 'all 0.3s ease',
   },
   socialLinks: {
     display: 'flex',
-    gap: '20px', // Space between social icons
+    gap: '20px',
   },
   socialLink: {
     color: '#61dafb',

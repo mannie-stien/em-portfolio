@@ -1,8 +1,8 @@
 import React, { useEffect } from "react";
-import { BrowserRouter as Router, Routes, Route, useLocation } from "react-router-dom"; // Import React Router
+import { BrowserRouter as Router, Routes, Route, useLocation } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
-import "aos/dist/aos.css"; // Import AOS styles
-import AOS from "aos"; // Import AOS
+import "aos/dist/aos.css";
+import AOS from "aos";
 import Home from "./components/Home";
 import Experience from "./components/Experience";
 import Skills from "./components/Skills";
@@ -10,23 +10,61 @@ import Projects from "./components/Projects";
 import "./App.css";
 import Hobby from "./components/Hobbies";
 import Footers from "./components/Footers";
-import CustomNavbar from "./components/CustomNavbar"; // Import CustomNavbar
+import CustomNavbar from "./components/CustomNavbar";
+import ReactGA from "react-ga4";
+
+const TRACKING_ID = "G-72H3M2ZHG9"; // Replace with your actual Measurement ID
+ReactGA.initialize(TRACKING_ID);
 
 const App = () => {
-  // Initialize AOS on component mount
+  useEffect(() => {
+    ReactGA.send("pageview");
+  }, []);
+
   useEffect(() => {
     AOS.init({
-      duration: 1000, // Animation duration in milliseconds
-      easing: "ease-in-out", // Easing effect
-      once: false, // Replay animations on both scroll up and down
-      mirror: true, // Re-run animations when scrolling back up
+      duration: 1000,
+      easing: "ease-in-out",
+      once: false,
+      mirror: true,
     });
+  }, []);
+
+  useEffect(() => {
+    const sections = ["home", "skills", "projects", "experience", "hobbies"];
+    const observers = [];
+
+    sections.forEach((section) => {
+      const element = document.getElementById(section);
+      if (element) {
+        const observer = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting) {
+                ReactGA.event({
+                  category: "Scroll",
+                  action: "Viewed Section",
+                  label: section, // Logs which section was viewed
+                });
+              }
+            });
+          },
+          { threshold: 0.5 } // Fires when 50% of the section is in view
+        );
+        observer.observe(element);
+        observers.push(observer);
+      }
+    });
+
+    return () => {
+      observers.forEach((observer) => observer.disconnect());
+    };
   }, []);
 
   return (
     <Router>
       <CustomNavbar />
-      <ScrollToTop /> {/* Add ScrollToTop component */}
+      <ScrollToTop />
       <main style={styles.mainContent}>
         <Home id="home" />
         <Skills id="skills" />
@@ -44,7 +82,7 @@ const ScrollToTop = () => {
   const { pathname } = useLocation();
 
   useEffect(() => {
-    const sectionId = pathname.substring(1); // Remove the leading "/"
+    const sectionId = pathname.substring(1);
     const section = document.getElementById(sectionId);
     if (section) {
       section.scrollIntoView({ behavior: "smooth" });
@@ -54,13 +92,11 @@ const ScrollToTop = () => {
   return null;
 };
 
-// Styles
 const styles = {
   mainContent: {
-    background: "linear-gradient(135deg, #0f0f17, #1b1b2a, #24243e, #141e30)", // Smooth dark theme
-    minHeight: "100vh", // Make it full height
-    width: "100%", // Ensure full width coverage
-    // display: "flex",
+    background: "linear-gradient(135deg, #0f0f17, #1b1b2a, #24243e, #141e30)",
+    minHeight: "100vh",
+    width: "100%",
     flexDirection: "column",
     alignItems: "center",
     justifyContent: "center",
@@ -68,7 +104,7 @@ const styles = {
   },
   section: {
     width: "100%",
-    scrollMarginTop: "80px", // Ensure the section aligns below the navbar
+    scrollMarginTop: "80px",
   },
 };
 
