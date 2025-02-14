@@ -46,12 +46,12 @@ export const experiences = [
     company: "25:2 Solutions LLC, Pocatello, ID",
     duration: "September 2021 – Present",
     responsibilities: [
-      "Developed cross-platform apps and web solutions using React Native, React.js, Django, and Python.",
-      "Improved code quality by conducting code reviews and maintaining a 95% code quality rating.",
-      "Implemented Docker for deployment, enhancing collaboration and ensuring consistency.",
-      "Boosted data exchange efficiency by 70% with APIs and accelerated cross-functional development by 80%.",
-      "Resolved bugs before deployment, saving time and reducing resource usage.",
-      "Enhanced scalability, improving software delivery efficiency.",
+      "Architected and developed scalable cross-platform applications using React Native, React.js, Django, and Python.",
+      "Increased code efficiency and maintainability by leading code reviews, maintaining a 95% quality rating.",
+      "Streamlined deployments using Docker, ensuring seamless collaboration and consistency across teams.",
+      "Engineered high-performance APIs, improving data exchange efficiency by 70% and boosting cross-functional development speed by 80%.",
+      "Proactively identified and resolved critical bugs pre-deployment, reducing downtime and enhancing resource optimization.",
+      "Designed scalable architectures that enhanced software delivery efficiency and long-term maintainability.",
     ],
   },
   {
@@ -59,11 +59,11 @@ export const experiences = [
     company: "Safestreets LLC, Rexburg, ID",
     duration: "July 2019 – January 2021",
     responsibilities: [
-      "Created visually appealing, responsive web pages using HTML, CSS, and JavaScript.",
-      "Integrated APIs into Angular applications, enhancing user experience.",
-      "Managed source code using Git and maintained version control.",
-      "Conducted unit testing and troubleshooting, ensuring smooth user interaction.",
-      "Streamlined workflows by developing reusable code libraries for common features.",
+      "Built modern, responsive web applications using HTML, CSS, JavaScript, and Angular.",
+      "Integrated third-party APIs, elevating user experience and expanding application capabilities.",
+      "Maintained Git-based version control, ensuring smooth collaboration and source code integrity.",
+      "Conducted unit testing and debugging, enhancing performance and user satisfaction.",
+      "Developed reusable UI components, reducing development time for future projects.",
     ],
   },
   {
@@ -71,10 +71,10 @@ export const experiences = [
     company: "Alder Holdings LLC, Orem, UT",
     duration: "January 2019 – April 2019",
     responsibilities: [
-      "Adapted quickly to new tools and technologies, supporting rapid project execution.",
-      "Solved complex software challenges with clean, maintainable code.",
-      "Applied DevOps principles to automate deployment processes.",
-      "Kept up with tech trends to apply relevant solutions in real-time.",
+      "Adapted quickly to new frameworks and tools, accelerating project timelines.",
+      "Tackled complex software challenges with clean, maintainable, and scalable code.",
+      "Automated deployment pipelines using DevOps best practices, improving efficiency.",
+      "Researched and implemented cutting-edge tech solutions, keeping applications ahead of the curve.",
     ],
   },
   {
@@ -82,10 +82,11 @@ export const experiences = [
     company: "Brigham Young University-Idaho, Rexburg, ID",
     duration: "February 2018 – December 2018",
     responsibilities: [
-      "Created comprehensive training materials, enabling staff to adopt new technologies.",
-      "Improved customer satisfaction by enhancing technical support efficiency.",
-      "Recommended software/hardware upgrades to improve productivity.",
-      "Implemented data backup protocols to safeguard critical data.",
+      "Designed comprehensive training materials, empowering staff to seamlessly adopt new technologies.",
+      "Improved customer satisfaction scores by optimizing technical support processes.",
+      "Recommended hardware/software upgrades, leading to enhanced productivity and efficiency.",
+      "Developed and enforced robust data backup protocols, ensuring data security and integrity.",
     ],
   },
 ];
+
