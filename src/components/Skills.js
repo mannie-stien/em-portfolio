@@ -1,134 +1,114 @@
-import React, { useState } from "react";
-import { Container, Row, Col, Card } from "react-bootstrap";
+import React from "react";
+import { Container, Row, Col } from "react-bootstrap";
 import { motion } from "framer-motion";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faCode,
   faDatabase,
   faTools,
-  faUserTie,
-  faChevronDown,
+  faCloud,
+  faRobot,
 } from "@fortawesome/free-solid-svg-icons";
 
 // Data and configuration
 const skillsData = {
-  "Front-End Development": [
-    "React.js",
-    "Angular",
-    "Vue.js",
+  "Languages": [
+    "PHP",
     "JavaScript",
     "TypeScript",
-    "HTML",
-    "CSS",
-    "SASS",
-    "TailwindCSS",
-    "Bootstrap",
-  ],
-  "Back-End Development": [
-    "Node.js",
-    "Express.js",
-    "Django",
-    "ASP.NET",
-    "Spring Boot",
     "Python",
-    "REST APIs",
+    "SQL",
   ],
-  "DevOps & Tools": ["Docker", "Git", "GitHub", "CI/CD", "AWS"],
-  "Soft Skills": [
-    "Communication",
-    "Teamwork",
-    "Problem Solving",
-    "Leadership",
-    "Time Management",
-    "Resilience",
-    "Adaptability",
-    "Critical Thinking",
+  "Backend": [
+    "Node.js",
+    "Django",
+    "Laravel",
+    "RESTful APIs",
+    "Microservices",
+    "OOP",
+  ],
+  "Frontend": [
+    "React",
+    "React Native",
+    "Angular",
+    "Expo",
+    "Responsive UI",
+  ],
+  "Databases": [
+    "PostgreSQL",
+    "MySQL",
+    "Schema Design",
+    "Query Optimization",
+    "Indexing",
+  ],
+  "DevOps & Cloud": [
+    "Docker",
+    "GitHub Actions",
+    "Jenkins",
+    "AWS EC2",
+    "AWS S3",
+    "AWS RDS",
+  ],
+  "AI & Automation": [
+    "Claude",
+    "OpenAI Codex",
+    "GitHub Copilot",
+    "Cursor",
+    "Windsurf",
+    "Prompt Engineering",
   ],
 };
 
 const icons = {
-  "Front-End Development": faCode,
-  "Back-End Development": faDatabase,
-  "DevOps & Tools": faTools,
-  "Soft Skills": faUserTie,
-};
-
-const colors = {
-  "Front-End Development": "#E3F2FD",
-  "Back-End Development": "#E3F2FD",
-  "DevOps & Tools": "#E3F2FD",
-  "Soft Skills": "#E3F2FD",
+  "Languages": faCode,
+  "Backend": faTools,
+  "Frontend": faCode,
+  "Databases": faDatabase,
+  "DevOps & Cloud": faCloud,
+  "AI & Automation": faRobot,
 };
 
 const Skills = () => {
-  const [expanded, setExpanded] = useState(null);
-
   return (
-    <section id="skills" style={styles.section}>
+    <section id="skills" className="section skills-section">
       <Container>
-        <motion.h2
+        <motion.div
+          className="section-heading centered"
           initial={{ opacity: 0, y: -20 }}
-          animate={{ opacity: 1, y: 0 }}
+          whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
-          style={styles.title}
         >
-          My Skills
-        </motion.h2>
-        <Row>
+          <span className="section-kicker">Technical Range</span>
+          <h2>Skills that move ideas into production</h2>
+          <p>
+            Backend-first engineering with practical frontend range, database
+            discipline, cloud delivery, and AI-assisted development workflows.
+          </p>
+        </motion.div>
+        <Row className="g-4">
           {Object.entries(skillsData).map(([category, skills]) => (
-            <Col xs={12} sm={6} md={6} lg={3} key={category} style={styles.col}>
+            <Col xs={12} md={6} lg={4} key={category}>
               <motion.div
                 initial={{ opacity: 0, scale: 0.9 }}
                 whileInView={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.5 }}
+                className="h-100"
               >
-                <Card
-                  style={{
-                    ...styles.card,
-                    backgroundColor: colors[category],
-                    height: expanded === category ? "auto" : "250px",
-                  }}
-                  onMouseEnter={() => setExpanded(category)}
-                  onMouseLeave={() => setExpanded(null)}
-                  onClick={() =>
-                    setExpanded(expanded === category ? null : category)
-                  } // Toggle on click for mobile
-                >
-                  <Card.Body style={styles.cardBody}>
-                    <FontAwesomeIcon
-                      icon={icons[category]}
-                      style={styles.icon}
-                    />
-                    <Card.Title style={styles.categoryTitle}>
-                      {category}
-                    </Card.Title>
-
-                    <motion.div
-                      animate={{ rotate: expanded === category ? 180 : 0 }}
-                      transition={{ duration: 0.3 }}
-                    >
-                      <FontAwesomeIcon
-                        icon={faChevronDown}
-                        style={styles.arrow}
-                      />
-                    </motion.div>
-
-                    {expanded === category && (
-                      <motion.ul
-                        initial={{ opacity: 0, height: 0 }}
-                        animate={{ opacity: 1, height: "auto" }}
-                        transition={{ duration: 0.3 }}
-                        style={styles.list}
-                      >
-                        {skills.map((skill) => (
-                          <li key={skill} style={styles.listItem}>
-                            {skill}
-                          </li>
-                        ))}
-                      </motion.ul>
-                    )}
-                  </Card.Body>
-                </Card>
+                <article className="skill-card">
+                  <div className="skill-card-header">
+                    <span className="skill-icon" aria-hidden="true">
+                      <FontAwesomeIcon icon={icons[category]} />
+                    </span>
+                    <h3>{category}</h3>
+                  </div>
+                  <div className="skill-list">
+                    {skills.map((skill) => (
+                      <span key={skill} className="skill-pill">
+                        {skill}
+                      </span>
+                    ))}
+                  </div>
+                </article>
               </motion.div>
             </Col>
           ))}
@@ -136,81 +116,6 @@ const Skills = () => {
       </Container>
     </section>
   );
-};
-
-// Styles
-const styles = {
-  section: {
-    padding: "80px 0 40px 0", // Adjusted padding to account for the navbar
-    textAlign: "center",
-    scrollMarginTop: "80px", // Ensure the section aligns below the navbar
-  },
-  title: {
-    fontSize: "2.5rem",
-    fontWeight: "700",
-    marginBottom: "40px",
-    color: "#61dafb",
-    "@media (max-width: 768px)": {
-      fontSize: "2rem", // Smaller font size for mobile
-    },
-  },
-  col: {
-    marginBottom: "20px", // Add spacing between cards on smaller screens
-  },
-  card: {
-    borderRadius: "15px",
-    boxShadow: "0 6px 10px rgba(0,0,0,0.15)",
-    textAlign: "center",
-    padding: "20px",
-    transition: "all 0.3s ease-in-out",
-    cursor: "pointer",
-    "@media (max-width: 768px)": {
-      height: "auto", // Allow cards to expand fully on mobile
-    },
-  },
-  cardBody: {
-    display: "flex",
-    flexDirection: "column",
-    alignItems: "center",
-    color: "#333",
-  },
-  icon: {
-    fontSize: "2.5rem",
-    marginBottom: "15px",
-    "@media (max-width: 768px)": {
-      fontSize: "2rem", // Smaller icon size for mobile
-    },
-  },
-  categoryTitle: {
-    fontSize: "1.5rem",
-    fontWeight: "600",
-    "@media (max-width: 768px)": {
-      fontSize: "1.2rem", // Smaller title size for mobile
-    },
-  },
-  arrow: {
-    fontSize: "1.5rem",
-    marginTop: "10px",
-    color: "#333",
-    "@media (max-width: 768px)": {
-      fontSize: "1.2rem", // Smaller arrow size for mobile
-    },
-  },
-  list: {
-    listStyle: "none",
-    padding: 0,
-    marginTop: "20px",
-    textAlign: "left",
-    width: "100%",
-  },
-  listItem: {
-    fontSize: "1.1rem",
-    padding: "5px 0",
-    color: "#333",
-    "@media (max-width: 768px)": {
-      fontSize: "1rem", // Smaller list item size for mobile
-    },
-  },
 };
 
 export default Skills;

@@ -1,0 +1,31 @@
+<svg width="1200" height="760" viewBox="0 0 1200 760" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="760" rx="48" fill="#101114"/>
+  <path d="M0 0h1200v760H0z" fill="url(#grid)" opacity=".34"/>
+  <circle cx="160" cy="146" r="235" fill="#2DD4BF" opacity=".15"/>
+  <circle cx="1040" cy="618" r="260" fill="#F59E0B" opacity=".17"/>
+  <rect x="128" y="120" width="944" height="520" rx="34" fill="#191B20" stroke="rgba(255,255,255,.14)" stroke-width="2"/>
+  <rect x="178" y="172" width="218" height="54" rx="14" fill="#2DD4BF"/>
+  <text x="206" y="207" fill="#101114" font-family="Arial, Helvetica, sans-serif" font-size="27" font-weight="900">QuoteFlow</text>
+  <rect x="178" y="270" width="332" height="248" rx="24" fill="rgba(255,255,255,.07)" stroke="rgba(255,255,255,.13)"/>
+  <text x="214" y="322" fill="#FFFFFF" font-family="Arial, Helvetica, sans-serif" font-size="28" font-weight="900">Quote Builder</text>
+  <rect x="214" y="354" width="238" height="16" rx="8" fill="#94A3B8"/>
+  <rect x="214" y="394" width="202" height="16" rx="8" fill="#94A3B8"/>
+  <rect x="214" y="434" width="256" height="16" rx="8" fill="#94A3B8"/>
+  <rect x="214" y="474" width="126" height="24" rx="12" fill="#2DD4BF"/>
+  <rect x="560" y="270" width="202" height="116" rx="22" fill="rgba(45,212,191,.13)" stroke="rgba(45,212,191,.42)" stroke-width="2"/>
+  <rect x="800" y="270" width="202" height="116" rx="22" fill="rgba(245,158,11,.12)" stroke="rgba(245,158,11,.38)" stroke-width="2"/>
+  <rect x="560" y="426" width="442" height="92" rx="22" fill="rgba(255,255,255,.07)" stroke="rgba(255,255,255,.13)"/>
+  <text x="586" y="321" fill="#FFFFFF" font-family="Arial, Helvetica, sans-serif" font-size="23" font-weight="900">Requests</text>
+  <text x="826" y="321" fill="#FFFFFF" font-family="Arial, Helvetica, sans-serif" font-size="23" font-weight="900">Payments</text>
+  <text x="586" y="478" fill="#FFFFFF" font-family="Arial, Helvetica, sans-serif" font-size="23" font-weight="900">Supplier analytics dashboard</text>
+  <path d="M605 344h112" stroke="#2DD4BF" stroke-width="12" stroke-linecap="round"/>
+  <path d="M845 344h112" stroke="#F59E0B" stroke-width="12" stroke-linecap="round"/>
+  <path d="M586 500h300" stroke="#94A3B8" stroke-width="12" stroke-linecap="round"/>
+  <rect x="178" y="560" width="824" height="18" rx="9" fill="rgba(255,255,255,.12)"/>
+  <rect x="178" y="560" width="674" height="18" rx="9" fill="#2DD4BF"/>
+  <defs>
+    <pattern id="grid" width="48" height="48" patternUnits="userSpaceOnUse">
+      <path d="M48 0H0v48" stroke="white" stroke-opacity=".12"/>
+    </pattern>
+  </defs>
+</svg>
