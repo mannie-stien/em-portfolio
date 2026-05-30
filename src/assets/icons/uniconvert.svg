@@ -1,0 +1,28 @@
+<svg width="1200" height="760" viewBox="0 0 1200 760" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="760" rx="48" fill="#101114"/>
+  <path d="M0 0h1200v760H0z" fill="url(#grid)" opacity=".34"/>
+  <circle cx="1026" cy="132" r="230" fill="#2DD4BF" opacity=".15"/>
+  <circle cx="150" cy="620" r="270" fill="#FB7185" opacity=".13"/>
+  <rect x="136" y="114" width="928" height="532" rx="36" fill="#191B20" stroke="rgba(255,255,255,.14)" stroke-width="2"/>
+  <rect x="186" y="162" width="218" height="54" rx="14" fill="#2DD4BF"/>
+  <text x="214" y="198" fill="#101114" font-family="Arial, Helvetica, sans-serif" font-size="28" font-weight="900">UniConvert</text>
+  <rect x="214" y="284" width="268" height="270" rx="32" fill="rgba(45,212,191,.12)" stroke="rgba(45,212,191,.4)" stroke-width="2"/>
+  <rect x="514" y="284" width="268" height="270" rx="32" fill="rgba(245,158,11,.12)" stroke="rgba(245,158,11,.36)" stroke-width="2"/>
+  <rect x="814" y="284" width="170" height="270" rx="32" fill="rgba(255,255,255,.07)" stroke="rgba(255,255,255,.13)"/>
+  <text x="258" y="344" fill="#FFFFFF" font-family="Arial, Helvetica, sans-serif" font-size="30" font-weight="900">Time</text>
+  <text x="558" y="344" fill="#FFFFFF" font-family="Arial, Helvetica, sans-serif" font-size="30" font-weight="900">Money</text>
+  <text x="854" y="344" fill="#FFFFFF" font-family="Arial, Helvetica, sans-serif" font-size="30" font-weight="900">Units</text>
+  <path d="M284 430h126M382 400l34 30-34 30" stroke="#2DD4BF" stroke-width="14" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M584 432h126M682 402l34 30-34 30" stroke="#F59E0B" stroke-width="14" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M858 432h66" stroke="#CBD3DE" stroke-width="14" stroke-linecap="round"/>
+  <rect x="258" y="488" width="164" height="16" rx="8" fill="#94A3B8"/>
+  <rect x="558" y="488" width="164" height="16" rx="8" fill="#94A3B8"/>
+  <rect x="854" y="488" width="80" height="16" rx="8" fill="#94A3B8"/>
+  <rect x="186" y="584" width="828" height="18" rx="9" fill="rgba(255,255,255,.12)"/>
+  <rect x="186" y="584" width="712" height="18" rx="9" fill="#2DD4BF"/>
+  <defs>
+    <pattern id="grid" width="48" height="48" patternUnits="userSpaceOnUse">
+      <path d="M48 0H0v48" stroke="white" stroke-opacity=".12"/>
+    </pattern>
+  </defs>
+</svg>

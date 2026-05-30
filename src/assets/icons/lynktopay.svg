@@ -1,0 +1,30 @@
+<svg width="1200" height="760" viewBox="0 0 1200 760" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="760" rx="48" fill="#101114"/>
+  <path d="M0 0h1200v760H0z" fill="url(#grid)" opacity=".32"/>
+  <circle cx="972" cy="140" r="220" fill="#2DD4BF" opacity=".16"/>
+  <circle cx="190" cy="615" r="270" fill="#FB7185" opacity=".14"/>
+  <rect x="388" y="68" width="424" height="624" rx="54" fill="#0B1220" stroke="rgba(255,255,255,.16)" stroke-width="2"/>
+  <rect x="424" y="114" width="352" height="532" rx="34" fill="#121827"/>
+  <rect x="464" y="154" width="166" height="42" rx="13" fill="#2DD4BF"/>
+  <text x="485" y="183" fill="#101114" font-family="Arial, Helvetica, sans-serif" font-size="22" font-weight="900">LynkToPay</text>
+  <rect x="464" y="230" width="272" height="116" rx="24" fill="rgba(45,212,191,.13)" stroke="rgba(45,212,191,.42)" stroke-width="2"/>
+  <text x="490" y="275" fill="#FFFFFF" font-family="Arial, Helvetica, sans-serif" font-size="28" font-weight="900">GHS 2,450</text>
+  <text x="490" y="310" fill="#CFEAE6" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="700">Verified payment record</text>
+  <circle cx="692" cy="288" r="27" fill="#2DD4BF"/>
+  <path d="m680 288 9 9 18-21" stroke="#101114" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+  <rect x="464" y="378" width="126" height="108" rx="22" fill="rgba(255,255,255,.08)" stroke="rgba(255,255,255,.13)"/>
+  <rect x="610" y="378" width="126" height="108" rx="22" fill="rgba(255,255,255,.08)" stroke="rgba(255,255,255,.13)"/>
+  <path d="M509 435h36M527 417v36" stroke="#2DD4BF" stroke-width="10" stroke-linecap="round"/>
+  <path d="M652 420h42v40h-42z" stroke="#F59E0B" stroke-width="9" stroke-linejoin="round"/>
+  <path d="M652 433h42" stroke="#F59E0B" stroke-width="9"/>
+  <text x="486" y="522" fill="#FFFFFF" font-family="Arial, Helvetica, sans-serif" font-size="20" font-weight="800">Orders</text>
+  <text x="626" y="522" fill="#FFFFFF" font-family="Arial, Helvetica, sans-serif" font-size="20" font-weight="800">Receipts</text>
+  <rect x="464" y="554" width="272" height="20" rx="10" fill="rgba(255,255,255,.12)"/>
+  <rect x="464" y="554" width="204" height="20" rx="10" fill="#2DD4BF"/>
+  <rect x="515" y="660" width="170" height="8" rx="4" fill="rgba(255,255,255,.22)"/>
+  <defs>
+    <pattern id="grid" width="48" height="48" patternUnits="userSpaceOnUse">
+      <path d="M48 0H0v48" stroke="white" stroke-opacity=".12"/>
+    </pattern>
+  </defs>
+</svg>

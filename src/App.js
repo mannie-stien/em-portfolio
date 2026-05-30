@@ -1,5 +1,4 @@
 import React, { useEffect } from "react";
-import { BrowserRouter as Router, Routes, Route, useLocation } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "aos/dist/aos.css";
 import AOS from "aos";
@@ -62,50 +61,18 @@ const App = () => {
   }, []);
 
   return (
-    <Router>
+    <>
       <CustomNavbar />
-      <ScrollToTop />
-      <main style={styles.mainContent}>
-        <Home id="home" />
-        <Skills id="skills" />
-        <Projects id="projects" />
-        <Experience id="experience" />
-        <Hobby id="hobbies" />
+      <main className="site-shell">
+        <Home />
+        <Skills />
+        <Projects />
+        <Experience />
+        <Hobby />
       </main>
       <Footers />
-    </Router>
+    </>
   );
-};
-
-// ScrollToTop Component
-const ScrollToTop = () => {
-  const { pathname } = useLocation();
-
-  useEffect(() => {
-    const sectionId = pathname.substring(1);
-    const section = document.getElementById(sectionId);
-    if (section) {
-      section.scrollIntoView({ behavior: "smooth" });
-    }
-  }, [pathname]);
-
-  return null;
-};
-
-const styles = {
-  mainContent: {
-    background: "linear-gradient(135deg, #0f0f17, #1b1b2a, #24243e, #141e30)",
-    minHeight: "100vh",
-    width: "100%",
-    flexDirection: "column",
-    alignItems: "center",
-    justifyContent: "center",
-    scrollPaddingTop: "80px",
-  },
-  section: {
-    width: "100%",
-    scrollMarginTop: "80px",
-  },
 };
 
 export default App;

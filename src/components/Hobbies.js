@@ -1,58 +1,60 @@
 import React from 'react';
-import { Container, Row, Col, Card } from 'react-bootstrap';
+import { Container, Row, Col } from 'react-bootstrap';
 import { motion } from 'framer-motion';
-import { FaFutbol, FaTableTennis, FaFilm } from 'react-icons/fa'; // Icons for hobbies
+import { FaFutbol, FaTableTennis, FaFilm } from 'react-icons/fa';
 
 const Hobby = () => {
   const hobbies = [
     {
       title: 'Soccer',
-      description: 'I love playing soccer. It’s a great way to stay active and work as a team.',
+      description: 'A fast way to stay active, compete, and sharpen teamwork.',
       icon: <FaFutbol size={40} />,
-      color: '#28a745', // Green for soccer
+      accent: 'green',
     },
     {
       title: 'Table Tennis',
-      description: 'Table tennis is my go-to indoor sport. It’s fast-paced and fun!',
+      description: 'Quick reactions, focus, and strategy packed into every rally.',
       icon: <FaTableTennis size={40} />,
-      color: '#007bff', // Blue for table tennis
+      accent: 'amber',
     },
     {
       title: 'Watching Movies',
-      description: 'I enjoy watching movies, especially thrillers and sci-fi. It’s a great way to relax.',
+      description: 'Thrillers and sci-fi are my favorite reset after deep work.',
       icon: <FaFilm size={40} />,
-      color: '#dc3545', // Red for movies
+      accent: 'rose',
     },
   ];
 
   return (
-    <section id="hobbies" style={styles.section}>
+    <section id="hobbies" className="section hobbies-section">
       <Container>
-        <motion.h2
+        <motion.div
+          className="section-heading centered"
           initial={{ opacity: 0, y: -20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
-          style={styles.title}
         >
-          My Hobbies
-        </motion.h2>
-        <Row>
+          <span className="section-kicker">Outside The Code</span>
+          <h2>Balance that keeps the work sharp</h2>
+          <p>
+            A few regular interests that keep energy, curiosity, and focus in
+            the mix.
+          </p>
+        </motion.div>
+        <Row className="g-4">
           {hobbies.map((hobby, index) => (
-            <Col md={4} key={index} className="mb-4">
+            <Col md={4} key={hobby.title}>
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: index * 0.2 }}
+                className="h-100"
               >
-                <Card style={styles.card}>
-                  <Card.Body style={styles.cardBody}>
-                    <div style={{ ...styles.iconContainer, backgroundColor: hobby.color }}>
-                      {hobby.icon}
-                    </div>
-                    <Card.Title style={styles.cardTitle}>{hobby.title}</Card.Title>
-                    <Card.Text style={styles.cardText}>{hobby.description}</Card.Text>
-                  </Card.Body>
-                </Card>
+                <article className={`hobby-card accent-${hobby.accent}`}>
+                  <div className="hobby-icon">{hobby.icon}</div>
+                  <h3>{hobby.title}</h3>
+                  <p>{hobby.description}</p>
+                </article>
               </motion.div>
             </Col>
           ))}
@@ -60,58 +62,6 @@ const Hobby = () => {
       </Container>
     </section>
   );
-};
-
-const styles = {
-  section: {
-    padding: "80px 0 40px 0", // Adjusted padding to account for the navbar
-    textAlign: "center",
-    scrollMarginTop: "80px", // Ensure the section aligns below the navbar
-  },
-  title: {
-    textAlign: 'center',
-    fontSize: '2.5rem',
-    marginBottom: '40px',
-    fontWeight: '700',
-    color: '#61dafb',  // Dark blue for title
-  },
-  card: {
-    borderRadius: '12px',
-    boxShadow: '0 4px 12px rgba(0, 0, 0, 0.1)',
-    display: 'flex',
-    flexDirection: 'column',
-    justifyContent: 'center',
-    alignItems: 'center',
-    height: '100%',
-    transition: 'transform 0.3s ease, box-shadow 0.3s ease',
-  },
-  cardBody: {
-    display: 'flex',
-    flexDirection: 'column',
-    alignItems: 'center',
-    textAlign: 'center',
-    padding: '30px',
-  },
-  iconContainer: {
-    width: '80px',
-    height: '80px',
-    borderRadius: '50%',
-    display: 'flex',
-    justifyContent: 'center',
-    alignItems: 'center',
-    marginBottom: '20px',
-    color: '#fff', // White icon color
-  },
-  cardTitle: {
-    fontSize: '1.5rem',
-    fontWeight: '600',
-    marginBottom: '10px',
-    color: '#2c3e50', // Dark blue for title
-  },
-  cardText: {
-    fontSize: '1rem',
-    color: '#666', // Gray for text
-  },
 };
 
 export default Hobby;

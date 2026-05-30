@@ -1,0 +1,30 @@
+<svg width="1200" height="760" viewBox="0 0 1200 760" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="760" rx="48" fill="#101114"/>
+  <path d="M0 0h1200v760H0z" fill="url(#grid)" opacity=".34"/>
+  <circle cx="1020" cy="130" r="230" fill="#2DD4BF" opacity=".15"/>
+  <circle cx="174" cy="620" r="250" fill="#FB7185" opacity=".14"/>
+  <rect x="120" y="118" width="960" height="524" rx="34" fill="#191B20" stroke="rgba(255,255,255,.14)" stroke-width="2"/>
+  <rect x="172" y="168" width="856" height="88" rx="22" fill="rgba(255,255,255,.07)" stroke="rgba(255,255,255,.12)"/>
+  <circle cx="216" cy="212" r="14" fill="#FB7185"/>
+  <circle cx="260" cy="212" r="14" fill="#F59E0B"/>
+  <circle cx="304" cy="212" r="14" fill="#2DD4BF"/>
+  <rect x="354" y="196" width="442" height="32" rx="16" fill="rgba(255,255,255,.1)"/>
+  <text x="380" y="219" fill="#D8DEE8" font-family="Arial, Helvetica, sans-serif" font-size="20" font-weight="700">Select text anywhere on the web</text>
+  <rect x="230" y="310" width="448" height="222" rx="28" fill="rgba(255,255,255,.08)" stroke="rgba(255,255,255,.13)"/>
+  <text x="266" y="364" fill="#FFFFFF" font-family="Arial, Helvetica, sans-serif" font-size="32" font-weight="900">Helpi AI</text>
+  <text x="266" y="410" fill="#CBD3DE" font-family="Arial, Helvetica, sans-serif" font-size="22" font-weight="700">Explain, summarize, translate</text>
+  <rect x="266" y="450" width="132" height="40" rx="20" fill="#2DD4BF"/>
+  <text x="295" y="477" fill="#101114" font-family="Arial, Helvetica, sans-serif" font-size="19" font-weight="900">Explain</text>
+  <rect x="414" y="450" width="144" height="40" rx="20" fill="rgba(255,255,255,.1)" stroke="rgba(255,255,255,.18)"/>
+  <text x="444" y="477" fill="#FFFFFF" font-family="Arial, Helvetica, sans-serif" font-size="19" font-weight="800">Ask AI</text>
+  <rect x="720" y="310" width="250" height="222" rx="28" fill="rgba(45,212,191,.12)" stroke="rgba(45,212,191,.4)" stroke-width="2"/>
+  <path d="M845 368c36 0 66 30 66 66s-30 66-66 66-66-30-66-66 30-66 66-66Z" fill="#2DD4BF"/>
+  <path d="M813 435h64M845 403v64" stroke="#101114" stroke-width="12" stroke-linecap="round"/>
+  <rect x="258" y="568" width="684" height="16" rx="8" fill="rgba(255,255,255,.12)"/>
+  <rect x="258" y="568" width="498" height="16" rx="8" fill="#2DD4BF"/>
+  <defs>
+    <pattern id="grid" width="48" height="48" patternUnits="userSpaceOnUse">
+      <path d="M48 0H0v48" stroke="white" stroke-opacity=".12"/>
+    </pattern>
+  </defs>
+</svg>

@@ -1,171 +1,60 @@
 import React from 'react';
 import { Container } from 'react-bootstrap';
 import { motion } from 'framer-motion';
-import { FaCircle } from 'react-icons/fa';
 import { experiences } from '../assets/icons/data';
 
 const Experience = () => {
   return (
-    <section id="experience" style={styles.section}>
+    <section id="experience" className="section experience-section">
       <Container>
-        <motion.h2
+        <motion.div
+          className="section-heading centered"
           initial={{ opacity: 0, y: -20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
-          style={styles.title}
         >
-          Experience
-        </motion.h2>
+          <span className="section-kicker">Experience</span>
+          <h2>Backend, integrations, and full-stack delivery</h2>
+          <p>
+            Resume-backed highlights from BambooHR, 25:2 Solutions,
+            SafeStreets USA, and Alder Holdings.
+          </p>
+        </motion.div>
 
-        <div style={styles.timeline}>
+        <div className="experience-list">
           {experiences.map((exp, index) => (
             <motion.div
-              key={index}
-              className="timeline-item"
-              initial={{ opacity: 0, x: index % 2 === 0 ? -50 : 50 }}
-              whileInView={{ opacity: 1, x: 0 }}
+              key={`${exp.company}-${exp.role}`}
+              className="experience-card"
+              initial={{ opacity: 0, y: 24 }}
+              whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: index * 0.2 }}
-              style={{
-                ...styles.timelineItem,
-                flexDirection: index % 2 === 0 ? 'row' : 'row-reverse',
-              }}
             >
-              {/* Left/Right Content Block */}
-              <div style={styles.content}>
-                <h3 style={styles.role}>{exp.role}</h3>
-                <h4 style={styles.company}>{exp.company}</h4>
-                <p style={styles.duration}>{exp.duration}</p>
-                <ul style={styles.list}>
+              <div className="experience-index">
+                {String(index + 1).padStart(2, '0')}
+              </div>
+              <article className="experience-content">
+                <div className="experience-meta">
+                  <div>
+                    <h3>{exp.role}</h3>
+                    <p className="experience-company">{exp.company}</p>
+                  </div>
+                  <span className="experience-duration">{exp.duration}</span>
+                </div>
+                <ul className="responsibility-list">
                   {exp.responsibilities.map((item, idx) => (
-                    <li key={idx} style={styles.listItem}>
-                      <FaCircle style={styles.icon} /> {item}
+                    <li key={idx}>
+                      {item}
                     </li>
                   ))}
                 </ul>
-              </div>
-
-              {/* Timeline Line & Marker */}
-              <div style={styles.markerContainer}>
-                <div style={styles.marker} />
-                <div style={styles.line} />
-              </div>
+              </article>
             </motion.div>
           ))}
         </div>
       </Container>
     </section>
   );
-};
-
-const styles = {
-  section: {
-    padding: "80px 0 40px 0",
-    textAlign: "center",
-    scrollMarginTop: "80px",
-  },
-  title: {
-    textAlign: 'center',
-    fontSize: '2.5rem',
-    fontWeight: '700',
-    marginBottom: '50px',
-    color: '#61dafb',
-  },
-  timeline: {
-    display: 'flex',
-    flexDirection: 'column',
-    alignItems: 'center',
-    position: 'relative',
-    padding: '20px 0',
-    width: '100%',
-  },
-  timelineItem: {
-    display: 'flex',
-    alignItems: 'center',
-    width: '100%',
-    maxWidth: '800px',
-    marginBottom: '40px',
-    gap: '20px',
-  },
-  content: {
-    width: '50%',
-    background: '#fff',
-    padding: '20px',
-    borderRadius: '8px',
-    boxShadow: '0 4px 10px rgba(0, 0, 0, 0.1)',
-    position: 'relative',
-    zIndex: 2,
-  },
-  role: {
-    fontSize: '1.5rem',
-    fontWeight: '600',
-    marginBottom: '5px',
-  },
-  company: {
-    fontSize: '1.2rem',
-    color: '#777',
-    marginBottom: '5px',
-  },
-  duration: {
-    fontSize: '1rem',
-    color: '#555',
-    fontStyle: 'italic',
-    marginBottom: '10px',
-  },
-  list: {
-    listStyleType: 'none',
-    padding: 0,
-  },
-  listItem: {
-    fontSize: '0.95rem',
-    marginBottom: '5px',
-    display: 'flex',
-    alignItems: 'center',
-  },
-  icon: {
-    fontSize: '8px',
-    marginRight: '8px',
-    color: '#007bff',
-  },
-  markerContainer: {
-    width: '50px',
-    display: 'flex',
-    flexDirection: 'column',
-    alignItems: 'center',
-  },
-  marker: {
-    width: '14px',
-    height: '14px',
-    background: '#007bff',
-    borderRadius: '50%',
-  },
-  line: {
-    width: '2px',
-    height: '100px',
-    background: '#007bff',
-    marginTop: '10px',
-  },
-  /* Responsive Styles */
-  '@media (max-width: 768px)': {
-    timelineItem: {
-      flexDirection: 'column !important', // Stack items vertically
-      alignItems: 'center',
-      textAlign: 'center',
-      width: '90%',
-    },
-    content: {
-      width: '100%',
-      padding: '15px',
-    },
-    markerContainer: {
-      width: '100%',
-      display: 'flex',
-      justifyContent: 'center',
-      margin: '10px 0',
-    },
-    line: {
-      display: 'none', // Hide the connecting line for smaller screens
-    },
-  },
 };
 
 export default Experience;
